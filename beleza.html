@@ -1,0 +1,357 @@
+<!-- Indica que o documento é um arquivo HTML. -->
+<!DOCTYPE html>
+
+<!-- Define a linguagem do conteúdo da página. -->
+<html lang="pt-br">
+
+<!-- Armazena informações sobre a página. -->
+<head>
+
+	<!-- Conjunto de caracteres que contém acentuação e ç. -->
+	<meta charset="utf-8">
+
+	<!-- Configuração da janela de visualização ( responsividade ). -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Importação do arquivo CSS. -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/layout.css">  -->
+
+	<style>
+		@charset "UTF-8";
+
+/* Propriedades que se aplicam a todos os elementos da página. */
+* {
+	/* Remove a margem externa de todos os lados do elemento. */
+	margin: 0;
+
+	/* Remove o espaçamento interno de todos os lados do elemento. */
+	padding: 0;
+
+	/* Inclui o preenchimento e a borda na largura e altura. */
+	box-sizing: border-box;
+}
+
+body {
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Quebra de linha quando os itens não couberem na largura da tela. */
+	flex-wrap: wrap;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+
+	/* Margem de todos os lados. */
+	margin: 3px;
+}
+
+/* Formatação comum entre os elementos. */
+header, nav, main, aside, footer {
+	/* Cor do fundo. */
+	background: rgb(241, 238, 241);
+	color: rgb(15, 14, 15);
+
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Margem externa de todos os lados. */
+	margin: 3px;
+}
+
+/* Seletores para formatação individual. */
+
+header {
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+header #logo {
+	
+	/* Exibição flexível.                          */
+	/* Torna o elemento um flex container          */
+	/* e os seus elementos internos em flex-itens. */
+	display: flex;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 0 1 200px;
+
+	/* Cor do fundo. */
+	background: rgb(241, 238, 241);
+	color: purple;
+
+	/* Alinha os itens na vertical. */
+	justify-content: center;
+
+	/* Alinha os itens na horizontal. */
+	align-items: center;
+	
+}
+
+#openMenu, #closeMenu {
+	/* Remove a borda. */
+	border: none;
+
+	/* Remove a cor de fundo. */
+	background: none;
+
+	/* Tamanho da fonte. */
+	font-size: 30px;
+
+	/* Espessura da forte. */
+	font-weight: bold;
+
+	/* Margem ao redor do elemento              */
+	/* (superior, direito, inferior e esquerdo) */
+	padding: 0px 5px 0px 5px;
+
+	/* Muda o cursor do mouse para ponteiro.*/
+	cursor: pointer;
+
+	/* Oculta o elemento. */
+	display: none;
+}
+
+nav {
+	/* Alinha os itens na vertical. */
+	justify-content: center;
+
+	/* Alinha os itens na horizontal. */
+	align-items: center;
+
+	/* Dispõe os itens em coluna. */
+	flex-direction: column;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 200px;
+}
+
+nav a {
+	/* Margem de todos os lados. */
+	margin: 3%;
+
+	/* Tamanho da fonte. */
+	font-size: 15pt;
+}
+
+main {
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 20 1 500px;
+}
+
+aside {
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 200px;
+}
+
+footer {
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
+}
+
+a {
+	/* Remove a decoração padrão do elemento. */
+	text-decoration: none;
+
+	/* Definir a cor da fonte para o padrão do elemento pai. */
+	color: black;
+}
+
+/* Altera o estilo dos elementos para serem apresentados */ 
+/* em telas menores que 717px. */
+@media only screen and (max-width: 717px) {
+	#openMenu, #closeMenu {
+		/* Retorna a visibilidade padrão. */
+		display: block;
+	}
+
+	#openMenu {
+		/* Espaço a esquerda será preenchido automaticamente
+		   colocando os itens a direita. */
+		margin-left: auto;
+	}
+
+	#closeMenu {
+		/* Torna a posição do elemento fixa. */
+		position: fixed;
+
+		/* Dispõe o elemento a 15px da esquerda. */
+		right: 15px;
+
+		/* Dispõe o elemento a 15px do topo. */
+		top: 15px;
+	}
+
+	nav {
+		/* Torna a posição do elemento fixa. */
+		position: fixed;
+
+		/* Ocupa 100% da largura da tela de exibição. */
+		width: 100vw;
+
+		/* Ocupa 100% da altura da tela de exibição. */
+		height: 100vh;
+
+		/* Cor em RGB, mais transparência. */
+		background: rgba(248, 16, 16, 0.8);
+
+		/* Alinha os itens na horizontal. */
+		align-items: center;
+
+		/* Alinha os itens na vertical. */
+		justify-content: center;
+
+		/* Remove a margem externa de todos os lados do elemento. */
+		margin: 0;
+
+		/* Oculta o elemento. */
+		display: none;
+
+		/* Invisivel */
+		opacity: 0;
+
+		/* Velocidade de transição de um estado para outro. */
+		transition: 0.3s;
+	}
+}
+
+#openMenu{
+	background-color: rgb(249, 247, 249);
+}
+
+div{
+	display: block;
+}
+
+h1{
+							font-size: 2.5em;
+							color: #151515;
+						}
+
+						h2 {
+       						font-size: 2em;
+        					color: #4682b4;
+  						  }
+    					h3 {
+      					  font-size: 1.5em;
+        				color: #32cd32;
+						}
+
+	</style>
+
+	<!-- Título da aba do navegador -->
+	<title>Beleza</title>
+</head>
+
+<!-- Conteúdo apresentado na tela. -->
+<body>
+
+	<!-- Agrupa os elementos que compõe o cabeçalho. -->
+	<header>
+		<a href="index.html" id="logo"><h1>Beleza</h1></a>
+
+		<button id="openMenu">&#9776;</button>
+	</header>
+
+	<!-- Agrupa links de navegação no site. -->
+	<nav id="menu">
+
+		<button id="closeMenu">X</button>
+
+		<a href="index.html">Home</a>
+		<a href="integrantes.html">Integrantes</a>
+		<a href="beleza.html">Beleza</a>
+		<a href="consciente.html">Consciente</a>
+		<a href="referencias.html">Referencias</a>
+	</nav>
+
+	<!-- Agrupa o conteúdo principal da página ou aplicação. -->
+	<main>
+
+		<div>
+
+			<div>
+				<h1>Beleza Consciente e os descartes inapropriados</h1>
+				<img src="blz.png" alt="">
+				https://www.slowbeauty.com.br/lifestyle/bem-estar-e-beleza/
+			</div>
+	
+			<br>
+	
+			<div>
+				Nos dias de hoje, a busca pela beleza tem se tornado uma 
+				prioridade para muitas pessoas. No entanto, essa busca nem 
+				sempre é realizada de maneira saudável e sustentável. A beleza consciente surge como uma resposta a essa demanda, promovendo práticas que não apenas realçam a aparência, mas também respeitam o bem-estar do indivíduo e o meio ambiente. 
+				<div>
+					
+					<h1>Entendendo o conceito de beleza consciente</h1>
+
+					<br>
+				A beleza consciente é um movimento que vai além das aparências superficiais. 
+				Trata-se de uma abordagem holística que considera o impacto dos produtos e práticas de beleza na saúde humana e no meio ambiente. 
+				Em essência, a beleza consciente busca integrar responsabilidade social, sustentabilidade e bem-estar pessoal na rotina de cuidados pessoais.
+			<br> 
+			<div>
+				<h1>Transparência
+				</h1>
+				Outro aspecto crucial é a transparência. Consumidores conscientes querem saber o que estão aplicando na pele e como esses produtos foram fabricados.
+				 Eles exigem listas de ingredientes claras e compreensíveis, e preferem marcas que são honestas sobre seus processos de produção e fontes de matérias-primas.
+				<br>
+			</div>
+			
+<h1>Saúde integral</h1>
+A beleza consciente também valoriza a saúde integral.
+ Isso significa que produtos de beleza não devem conter substâncias tóxicas ou prejudiciais, como parabenos, sulfatos, ftalatos e fragrâncias sintéticas.
+ Além disso, a beleza consciente promove práticas que incentivam um estilo de vida saudável, reconhecendo que a verdadeira beleza começa de dentro para fora.
+				</div>
+
+
+
+
+			</div>
+
+				<h1>Produtos de beleza saudáveis
+				</h1>
+					Optar por produtos de beleza que são livres de toxinas e produtos químicos agressivos não só protege a saúde, mas também melhora a aparência da pele. Ingredientes naturais e orgânicos tendem a ser mais gentis e nutritivos, promovendo uma pele mais saudável a longo prazo.</h1>
+		</div>
+		
+		
+	
+	
+	</main>
+
+	<!-- Agrupa informações e links relacionado ao conteúdo principal. -->
+	<aside>Aside</aside>
+
+	<!-- Agrupa informações de autoria, direitos autorais, contato, 
+		   mapa do site, links e documento relacionados. -->
+	<footer>Footer</footer>
+
+	<!-- Importação do arquivo JavaScript. -->
+	<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+
